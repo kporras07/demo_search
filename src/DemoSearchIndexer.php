@@ -36,7 +36,6 @@ class DemoSearchIndexer {
         'domain' => $element->domain,
       ];
       $item_ids[] = $element->publicId;
-      break;
     }
 
     $index = Index::load('external_docs');

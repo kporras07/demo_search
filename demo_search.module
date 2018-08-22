@@ -9,5 +9,5 @@
  * Implements hook_cron().
  */
 function demo_search_cron() {
-    
+   \Drupal::service('demo_search.indexer')->index();
 }
