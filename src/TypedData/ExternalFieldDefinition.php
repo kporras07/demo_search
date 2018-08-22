@@ -5,13 +5,14 @@ namespace Drupal\demo_search\TypedData;
 use Drupal\Core\TypedData\TypedData;
 use Drupal\Core\TypedData\TypedDataInterface;
 use Drupal\Core\TypedData\DataDefinition;
+use Drupal\Core\TypedData\DataDefinitionInterface;
 use Drupal\Core\TypedData\ComplexDataInterface;
 
 
 /**
  * Defines a class for External field definitions.
  */
-class ExternalFieldDefinition extends TypedData implements \IteratorAggregate, ComplexDataInterface {
+class ExternalFieldDefinition extends DataDefinition implements \IteratorAggregate {
   public function get($property_name) {
     if (isset($this->propertyDefinitions[$property_name])) {
       return $this->propertyDefinitions[$property_name];

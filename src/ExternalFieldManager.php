@@ -7,6 +7,7 @@ use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Cache\UseCacheBackendTrait;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\search_api\Entity\Server;
+use Drupal\demo_search\Plugin\DataType\ExternalField;
 use Drupal\demo_search\TypedData\ExternalFieldDefinition;
 
 /**
@@ -83,7 +84,7 @@ class ExternalFieldManager {
 
     $definitions = [];
     foreach ($fields as $name => $field) {
-      $definition = new Any($field);
+      $definition = new ExternalField($field);
       $definition->setLabel($name);
       $definitions[$name] = $definition;
     }

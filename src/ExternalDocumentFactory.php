@@ -3,6 +3,7 @@
 namespace Drupal\demo_search;
 
 use Drupal\Core\TypedData\TypedDataManagerInterface;
+use Drupal\demo_search\Plugin\DataType\ExternalField;
 use Drupal\demo_search\TypedData\ExternalFieldDefinition;
 use Drupal\demo_search\TypedData\ExternalDocumentDefinition;
 use Drupal\Core\TypedData\Plugin\DataType\Any;
@@ -33,9 +34,9 @@ class ExternalDocumentFactory {
    * {@inheritdoc}
    */
   public function create($item) {
-    $public_id = new Any([$item->publicId]);
-    $title = new Any([$item->title]);
-    $domain = new Any([$item->domain]);
+    $public_id = new ExternalField([$item->publicId]);
+    $title = new ExternalField([$item->title]);
+    $domain = new ExternalField([$item->domain]);
     $document = new ExternalDocumentDefinition($public_id, $title, $domain);
     return $document;
   }
