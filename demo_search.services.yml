@@ -1,0 +1,10 @@
+services:
+  demo_search.indexer:
+    class: Drupal\demo_search\DemoSearchIndexer
+    arguments: ['@http_client']
+  external_document.factory:
+    class: Drupal\demo_search\ExternalDocumentFactory
+    arguments: ['@typed_data_manager']
+  external_field.manager:
+    class: Drupal\demo_search\ExternalFieldManager
+    arguments: ['@cache.discovery']

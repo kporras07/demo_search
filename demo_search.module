@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Demo search module.
+ */
+
+/**
+ * Implements hook_cron().
+ */
+function demo_search_cron() {
+    
+}

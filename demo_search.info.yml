@@ -1,0 +1,6 @@
+name: Demo search
+type: module
+description: 'Custom search functionalities'
+package: Search
+version: 1.0
+core: 8.x
